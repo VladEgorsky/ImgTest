@@ -1,53 +1,92 @@
 <?php
-
 /* @var $this yii\web\View */
+/* @var $dataProvider yii\data\ArrayDataProvider */
 
 $this->title = 'My Yii Application';
 ?>
+
 <div class="site-index">
 
-    <div class="jumbotron">
-        <h1>Congratulations!</h1>
+    <?= \yii\widgets\ListView::widget([
+        'id' => 'masonry_item_container',
+        'dataProvider' => $dataProvider,
+        'itemView' => 'index_item',
+        'layout' => "{items}\n{pager}",
+        'emptyText' => '',
+        'options' => [
+            'class' => 'item_container',
+        ],
+        'itemOptions' => [
+            'class' => 'item',
+        ],
+    ]) ?>
 
-        <p class="lead">You have successfully created your Yii-powered application.</p>
-
-        <p><a class="btn btn-lg btn-success" href="http://www.yiiframework.com">Get started with Yii</a></p>
-    </div>
-
-    <div class="body-content">
-
-        <div class="row">
-            <div class="col-lg-4">
-                <h2>Heading</h2>
-
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                    ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                    fugiat nulla pariatur.</p>
-
-                <p><a class="btn btn-default" href="http://www.yiiframework.com/doc/">Yii Documentation &raquo;</a></p>
-            </div>
-            <div class="col-lg-4">
-                <h2>Heading</h2>
-
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                    ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                    fugiat nulla pariatur.</p>
-
-                <p><a class="btn btn-default" href="http://www.yiiframework.com/forum/">Yii Forum &raquo;</a></p>
-            </div>
-            <div class="col-lg-4">
-                <h2>Heading</h2>
-
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                    ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                    fugiat nulla pariatur.</p>
-
-                <p><a class="btn btn-default" href="http://www.yiiframework.com/extensions/">Yii Extensions &raquo;</a></p>
-            </div>
-        </div>
-
-    </div>
 </div>
+
+
+<?php
+if (!Yii::$app->request->get('keyword')) {
+    return true;
+}
+
+
+$siteIndexCss = <<< CSS
+.item_container {
+  box-sizing: border-box;
+}
+
+.item_container:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+.item {
+  width: 22%;
+  /*padding: 10px;  */
+  margin: 6px auto;
+  float: left;
+  background: #e4e4e4;
+  border-radius: 5px;
+}
+
+.item img {
+    max-width: 100%;
+}
+CSS;
+
+
+$currentUrl = \yii\helpers\Url::current();
+
+$siteIndexJs = <<< JS
+var item_container = $(".item_container").masonry({
+    // options
+    itemSelector: ".item",
+    //columnWidth: ".sizer",
+    percentPosition: true,
+    gutter: 10
+});
+
+// get Masonry instance
+var msnry = item_container.data("masonry");
+
+// init Infinite Scroll
+item_container.infiniteScroll({
+  path: function() {
+    return "$currentUrl&page=" + ( this.loadCount + 2 );
+  },
+  append: ".item",
+  outlayer: msnry,
+  prefgill: false
+});
+
+// item_container.on( 'request.infiniteScroll', function( event, path ) {
+//   console.log( 'Loading page: ' + path );
+// });
+
+JS;
+
+$this->registerCss($siteIndexCss);
+$this->registerJs($siteIndexJs);
+$this->registerJsFile('https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js', ['depends' => \yii\bootstrap\BootstrapAsset::className()]);
+$this->registerJsFile('https://unpkg.com/infinite-scroll@3/dist/infinite-scroll.pkgd.min.js', ['depends' => \yii\bootstrap\BootstrapAsset::className()]);

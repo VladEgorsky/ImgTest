@@ -5,6 +5,7 @@
 
 use app\widgets\Alert;
 use yii\helpers\Html;
+use yii\helpers\Url;
 use yii\bootstrap\Nav;
 use yii\bootstrap\NavBar;
 use yii\widgets\Breadcrumbs;
@@ -32,10 +33,19 @@ AppAsset::register($this);
         'brandLabel' => Yii::$app->name,
         'brandUrl' => Yii::$app->homeUrl,
         'options' => [
-            'class' => 'navbar-inverse navbar-fixed-top',
+            'class' => 'navbar navbar-default navbar-fixed-top',
         ],
-    ]);
-    echo Nav::widget([
+    ]); ?>
+
+    <?= Html::beginForm(Url::to(['/site/index']), 'get', ['id' => 'mainmenu_search_form', 'class' => 'navbar-form navbar-left']) ?>
+        <div class="form-group">
+            <input name="keyword" value="<?= Yii::$app->request->get('keyword', '') ?>" type="text" class="form-control" placeholder="Search" />
+        </div>
+        <button type="submit" class="btn btn-default">Submit</button>
+    <?= Html::endForm() ?>
+
+
+    <?php echo Nav::widget([
         'options' => ['class' => 'navbar-nav navbar-right'],
         'items' => [
             ['label' => 'Home', 'url' => ['/site/index']],

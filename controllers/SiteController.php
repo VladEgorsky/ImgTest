@@ -3,7 +3,9 @@
 namespace app\controllers;
 
 use Yii;
+use yii\data\ArrayDataProvider;
 use yii\filters\AccessControl;
+use yii\httpclient\Client;
 use yii\web\Controller;
 use yii\web\Response;
 use yii\filters\VerbFilter;
@@ -59,9 +61,56 @@ class SiteController extends Controller
      *
      * @return string
      */
-    public function actionIndex()
+    public function actionIndex($keyword = null, $page = null)
     {
-        return $this->render('index');
+        $data = ($keyword || $page) ? $this->getIndexData($keyword, $page) : [];
+
+        $dataProvider = new ArrayDataProvider([
+            'allModels' => $data,
+            'pagination' => false,
+            'sort' => false,
+        ]);
+
+        if (Yii::$app->request->isAjax) {
+            return $this->renderAjax('index', ['dataProvider' => $dataProvider]);
+        }
+
+        return $this->render('index', ['dataProvider' => $dataProvider]);
+    }
+
+    private function getIndexData($keyword, $page=null)
+    {
+        $requestData = [
+            'engine' => 1,
+            'keywords' => $keyword,
+            'api_key' => 'testdev',
+            'offset' => $page ? ($page*10 - 10) : 0,
+            'limit' => 10,
+        ];
+
+        $client = new Client();
+        $response = $client->createRequest()
+            ->setMethod('GET')
+            ->setUrl('http://api3.beachinsoft.com/?r=api/search')
+            ->setData($requestData)
+            ->send();
+
+        if (!$response->isOk) {
+            return [];
+        }
+
+        $data = [];
+        foreach ($response->data['result']['results'] as $item) {
+            $data[] = [
+                'id' => $item['id'],
+                'image_link' => $item['image_link'],
+                'image_url' => $item['image_url'],
+                'description' => $item['description'],
+                'author_name' => $item['author_name'],
+            ];
+        }
+
+        return $data;
     }
 
     /**

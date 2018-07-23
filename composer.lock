@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "caff348336562e18e7b63aba8ee75366",
+    "content-hash": "f817fca48bfc7095de4b2ed6d1a763c2",
     "packages": [
         {
             "name": "bower-asset/bootstrap",
@@ -22,85 +22,6 @@
             },
             "require": {
                 "bower-asset/jquery": ">=1.9.1,<4.0"
-            },
-            "type": "bower-asset",
-            "license": [
-                "MIT"
-            ]
-        },
-        {
-            "name": "bower-asset/desandro-matches-selector",
-            "version": "v2.0.2",
-            "source": {
-                "type": "git",
-                "url": "git@github.com:desandro/matches-selector.git",
-                "reference": "42ee1cbab7469454d140bdab04d2ceed9c68b85e"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/desandro/matches-selector/zipball/42ee1cbab7469454d140bdab04d2ceed9c68b85e",
-                "reference": "42ee1cbab7469454d140bdab04d2ceed9c68b85e",
-                "shasum": null
-            },
-            "type": "bower-asset",
-            "license": [
-                "MIT"
-            ]
-        },
-        {
-            "name": "bower-asset/ev-emitter",
-            "version": "v1.1.1",
-            "source": {
-                "type": "git",
-                "url": "git@github.com:metafizzy/ev-emitter.git",
-                "reference": "1baa3a03d8e07f665b0eb797661fcc2b0d2a5736"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/metafizzy/ev-emitter/zipball/1baa3a03d8e07f665b0eb797661fcc2b0d2a5736",
-                "reference": "1baa3a03d8e07f665b0eb797661fcc2b0d2a5736",
-                "shasum": null
-            },
-            "type": "bower-asset",
-            "license": [
-                "MIT"
-            ]
-        },
-        {
-            "name": "bower-asset/fizzy-ui-utils",
-            "version": "v2.0.7",
-            "source": {
-                "type": "git",
-                "url": "git@github.com:metafizzy/fizzy-ui-utils.git",
-                "reference": "72feb9fc3d6de25696291941121bb3ec2db8221e"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/metafizzy/fizzy-ui-utils/zipball/72feb9fc3d6de25696291941121bb3ec2db8221e",
-                "reference": "72feb9fc3d6de25696291941121bb3ec2db8221e",
-                "shasum": null
-            },
-            "require": {
-                "bower-asset/desandro-matches-selector": ">=2.0.0,<3.0.0"
-            },
-            "type": "bower-asset",
-            "license": [
-                "MIT"
-            ]
-        },
-        {
-            "name": "bower-asset/get-size",
-            "version": "v2.0.3",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/desandro/get-size.git",
-                "reference": "6879e7f15b4b6e19ca392b6955edfa8d4aa6f787"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/desandro/get-size/zipball/6879e7f15b4b6e19ca392b6955edfa8d4aa6f787",
-                "reference": "6879e7f15b4b6e19ca392b6955edfa8d4aa6f787",
-                "shasum": null
             },
             "type": "bower-asset",
             "license": [
@@ -142,72 +63,6 @@
                 "url": "https://api.github.com/repos/jquery/jquery-dist/zipball/77d2a51d0520d2ee44173afdf4e40a9201f5964e",
                 "reference": "77d2a51d0520d2ee44173afdf4e40a9201f5964e",
                 "shasum": null
-            },
-            "type": "bower-asset",
-            "license": [
-                "MIT"
-            ]
-        },
-        {
-            "name": "bower-asset/jquery-infinite-scroll",
-            "version": "2.1.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/metafizzy/infinite-scroll.git",
-                "reference": "f0d9eecb55a428b2fd4027964a22b84633ba6e3e"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/metafizzy/infinite-scroll/zipball/f0d9eecb55a428b2fd4027964a22b84633ba6e3e",
-                "reference": "f0d9eecb55a428b2fd4027964a22b84633ba6e3e",
-                "shasum": null
-            },
-            "type": "bower-asset",
-            "license": [
-                "MIT"
-            ]
-        },
-        {
-            "name": "bower-asset/jquery-masonry",
-            "version": "v4.2.2",
-            "source": {
-                "type": "git",
-                "url": "git@github.com:desandro/masonry.git",
-                "reference": "3b0883cf4a4a046896719b9cf282ea74be7ffecd"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/desandro/masonry/zipball/3b0883cf4a4a046896719b9cf282ea74be7ffecd",
-                "reference": "3b0883cf4a4a046896719b9cf282ea74be7ffecd",
-                "shasum": null
-            },
-            "require": {
-                "bower-asset/get-size": ">=2.0.2,<3.0.0",
-                "bower-asset/outlayer": ">=2.1.0,<3.0.0"
-            },
-            "type": "bower-asset",
-            "license": [
-                "MIT"
-            ]
-        },
-        {
-            "name": "bower-asset/outlayer",
-            "version": "v2.1.1",
-            "source": {
-                "type": "git",
-                "url": "git@github.com:metafizzy/outlayer.git",
-                "reference": "bf31c5748bf84fcc2c553d1199a6ecaf0ebd9878"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/metafizzy/outlayer/zipball/bf31c5748bf84fcc2c553d1199a6ecaf0ebd9878",
-                "reference": "bf31c5748bf84fcc2c553d1199a6ecaf0ebd9878",
-                "shasum": null
-            },
-            "require": {
-                "bower-asset/ev-emitter": ">=1.0.0,<2.0.0",
-                "bower-asset/fizzy-ui-utils": ">=2.0.0,<3.0.0",
-                "bower-asset/get-size": ">=2.0.2,<3.0.0"
             },
             "type": "bower-asset",
             "license": [
@@ -358,145 +213,6 @@
                 "html"
             ],
             "time": "2018-02-23T01:58:20+00:00"
-        },
-        {
-            "name": "nerburish/yii2-masonry-asset",
-            "version": "1.0.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/nerburish/yii2-masonry-asset.git",
-                "reference": "a0ef1dc6b7350bfc4ed991fd4bcb6b4c908ed783"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/nerburish/yii2-masonry-asset/zipball/a0ef1dc6b7350bfc4ed991fd4bcb6b4c908ed783",
-                "reference": "a0ef1dc6b7350bfc4ed991fd4bcb6b4c908ed783",
-                "shasum": ""
-            },
-            "require": {
-                "bower-asset/jquery-masonry": "*",
-                "yiisoft/yii2": "*"
-            },
-            "type": "yii2-extension",
-            "autoload": {
-                "psr-4": {
-                    "nerburish\\masonry\\": ""
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "nerburish",
-                    "email": "nerburish@hotmail.com"
-                }
-            ],
-            "description": "Simple asset bundle for masonry.js (http://masonry.desandro.com/)",
-            "keywords": [
-                "asset",
-                "extension",
-                "jquery",
-                "masonry",
-                "yii2"
-            ],
-            "time": "2017-02-18T08:33:57+00:00"
-        },
-        {
-            "name": "nerburish/yii2-masonry-view",
-            "version": "1.0.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/nerburish/yii2-masonry-view.git",
-                "reference": "bb960ebf04c7ebd3edec9f52e5edce965f89b5d6"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/nerburish/yii2-masonry-view/zipball/bb960ebf04c7ebd3edec9f52e5edce965f89b5d6",
-                "reference": "bb960ebf04c7ebd3edec9f52e5edce965f89b5d6",
-                "shasum": ""
-            },
-            "require": {
-                "nerburish/yii2-masonry-asset": "*",
-                "yiisoft/yii2": "*"
-            },
-            "type": "yii2-extension",
-            "autoload": {
-                "psr-4": {
-                    "nerburish\\masonryview\\": ""
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "nerburish",
-                    "email": "nerburish@hotmail.com"
-                }
-            ],
-            "description": "ListView widget improved to use Masonry (http://masonry.desandro.com/)",
-            "keywords": [
-                "ListView",
-                "dataprovider",
-                "extension",
-                "masonry",
-                "view",
-                "widget",
-                "yii2"
-            ],
-            "time": "2017-02-18T08:12:15+00:00"
-        },
-        {
-            "name": "nirvana-msu/yii2-infinite-scroll",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/nirvana-msu/yii2-infinite-scroll.git",
-                "reference": "ee78b2f2abb1a2c18248867733ddc37eee68392c"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/nirvana-msu/yii2-infinite-scroll/zipball/ee78b2f2abb1a2c18248867733ddc37eee68392c",
-                "reference": "ee78b2f2abb1a2c18248867733ddc37eee68392c",
-                "shasum": ""
-            },
-            "require": {
-                "bower-asset/jquery-infinite-scroll": "2.*",
-                "yiisoft/yii2": "*"
-            },
-            "type": "yii2-extension",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "1.0.x-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "nirvana\\infinitescroll\\": ""
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Alexander Stepanov",
-                    "email": "student_vmk@mail.ru"
-                }
-            ],
-            "description": "Yii2 extension for infinite-scroll jQuery plugin",
-            "keywords": [
-                "infinite-scroll",
-                "jquery",
-                "plugin",
-                "widget",
-                "yii2"
-            ],
-            "time": "2017-07-17T20:37:34+00:00"
         },
         {
             "name": "swiftmailer/swiftmailer",
@@ -3621,9 +3337,7 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": {
-        "nirvana-msu/yii2-infinite-scroll": 20
-    },
+    "stability-flags": [],
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
