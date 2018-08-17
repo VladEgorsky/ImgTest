@@ -2,6 +2,7 @@
 /* @var $this yii\web\View */
 /* @var $dataProvider yii\data\ArrayDataProvider */
 
+
 $this->title = 'My Yii Application';
 ?>
 
